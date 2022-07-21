@@ -1,8 +1,7 @@
 #!/usr/bin/node
 
 /*
-JavaScript script that display all places
-URL: http://0.0.0.0:5001/api/v1/places_search/
+JavaScript script for AirBnB clone
 Use the JQuery API
 */
 
@@ -101,4 +100,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         });
     });
+
+    // Filter places by Amenity
+
 });

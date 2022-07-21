@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                 if (place.number_bathrooms !== 1)
                     infos.bathrooms = "Bathrooms";
 
-                    console.log(userName);
                 const article = `
                     <article>
                         <div class="title_box">
