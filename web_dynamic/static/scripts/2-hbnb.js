@@ -8,19 +8,16 @@ URL: http://0.0.0.0:5001/api/v1/status/
 Use the JQuery API
 */
 
-const status = require("statuses");
+const url = 'http://0.0.0.0:5001/api/v1/status/';
 
-const $ = window.$;
-const url = 'http://localhost:5001/api/v1/status/';
-
-document.addEventListener('DOMContentLoaded', function () {
-    const status = $.getJSON(url, function (data) {
-        $('#api_status').text(data.status);
+document.addEventListener('DOMContentLoaded',  async function () {
+    const status = await $.getJSON(url, (data) => {
+        if (data.status === 'OK') {
+            $('#api_status').addClass("available");
+        } else {
+            $('#api_status').removeClass("available");
+        }
     });
 
-    if (status === 'OK') {
-        $('#api_status').addClass("available");
-    } else {
-        $('#api_status').removeClass("available");
-    }
+
 });
