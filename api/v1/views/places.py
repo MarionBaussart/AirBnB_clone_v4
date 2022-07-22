@@ -61,19 +61,20 @@ def delete_place(place_id):
 
 
 # new route
-@app_views.route('/places_search', methods=['POST'],
-                 strict_slashes=False)
-@swag_from('documentation/place/search_places.yml', methods=['POST'])
-def search_places():
-    """
-    Search a Place
-    """
-    place = storage.all(Place)
+# @app_views.route('/places_search', methods=['POST'],
+#                  strict_slashes=False)
+# @swag_from('documentation/place/search_places.yml', methods=['POST'])
+# def search_places():
+#     """
+#     Search a Place
+#     """
+#     place = storage.all(Place)
 
-    if not place:
-        abort(404)
+#     if not place:
+#         abort(404)
 
-    return make_response({k: v.to_dict() for k, v in place.items()}, 200)
+
+#     return make_response({k: v.to_dict() for k, v in place.items()}, 200)
 
 
 @app_views.route('/cities/<city_id>/places', methods=['POST'],
